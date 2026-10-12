@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vibe Coding Manual — Guía de Desarrollo Asistido por IA</title>
+  <meta name="description" content="Manual completo de Vibe Coding: metodología de desarrollo asistido por inteligencia artificial y agentes interactivos.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="app">
+    <aside class="sidebar" id="sidebar" aria-label="Navegación principal">
+      <div class="sidebar-brand">
+        <span class="brand-icon" aria-hidden="true">✦</span>
+        <span class="brand-text">Vibe Coding</span>
+        <span class="brand-badge">Manual</span>
+      </div>
+      <nav class="sidebar-nav">
+        <ul role="list">
+          <li><button class="nav-link active" data-section="inicio" id="nav-inicio">Inicio</button></li>
+          <li><button class="nav-link" data-section="filosofia" id="nav-filosofia">Filosofía</button></li>
+          <li><button class="nav-link" data-section="flujo" id="nav-flujo">Flujo de Trabajo</button></li>
+          <li><button class="nav-link" data-section="patrones" id="nav-patrones">Patrones de Prompting</button></li>
+          <li><button class="nav-link" data-section="ecosistema" id="nav-ecosistema">Ecosistema</button></li>
+          <li><button class="nav-link" data-section="arquitectura" id="nav-arquitectura">Arquitectura Rápida</button></li>
+          <li><button class="nav-link" data-section="practicas" id="nav-practicas">Mejores Prácticas</button></li>
+          <li><button class="nav-link" data-section="antipatrones" id="nav-antipatrones">Anti-patrones</button></li>
+          <li><button class="nav-link" data-section="prompts" id="nav-prompts">Prompts de Ejemplo</button></li>
+          <li><button class="nav-link" data-section="glosario" id="nav-glosario">Glosario</button></li>
+        </ul>
+      </nav>
+      <div class="sidebar-footer">
+        <p>v1.0 · 2026</p>
+      </div>
+    </aside>
+
+    <div class="overlay" id="overlay" aria-hidden="true"></div>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú de navegación" aria-expanded="false">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+        <div class="search-box">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="search" id="search-input" placeholder="Buscar en el manual…" aria-label="Buscar en el manual">
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema claro/oscuro">
+          <span class="theme-icon-light" aria-hidden="true">☀</span>
+          <span class="theme-icon-dark" aria-hidden="true">☾</span>
+        </button>
+      </header>
+
+      <div class="content" id="content">
+        <!-- ==================== INICIO ==================== -->
+        <section class="section active" id="section-inicio" aria-labelledby="inicio-heading">
+          <div class="hero">
+            <h1 id="inicio-heading">Vibe Coding</h1>
+            <p class="hero-subtitle">Desarrollo de software asistido por inteligencia artificial y agentes interactivos</p>
+            <div class="hero-meta">
+              <span class="badge">Metodología</span>
+              <span class="badge">2026</span>
+            </div>
+          </div>
+
+          <article class="card">
+            <h2>¿Qué es Vibe Coding?</h2>
+            <p><strong>Vibe Coding</strong> es una metodología de desarrollo de software donde el programador delega la mayor parte de la implementación mecánica a un agente de inteligencia artificial, enfocándose en la <em>intención</em>, la <em>arquitectura</em> y la <em>revisión</em> del código generado. El término, acuñado en 2025, describe un paradigma en el que la relación entre humano e IA es colaborativa: el humano plantea el objetivo y la IA propone soluciones iterativas.</p>
+            <p>En lugar de escribir línea por línea, el desarrollador <em>orquesta</em> la construcción mediante prompts declarativos, validación visual y ciclos de retroalimentación rápidos. La productividad ya no se mide en líneas de código propias, sino en la calidad de la dirección que se le da al agente.</p>
+          </article>
+
+          <article class="card">
+            <h2>Principios Fundamentales</h2>
+            <div class="principles-grid">
+              <div class="principle-item">
+                <div class="principle-number">01</div>
+                <h3>Intención sobre Implementación</h3>
+                <p>Describe el <em>qué</em> y el <em>por qué</em>; deja que la IA resuelva el <em>cómo</em>.</p>
+              </div>
+              <div class="principle-item">
+                <div class="principle-number">02</div>
+                <h3>Iteración Rápida</h3>
+                <p>Ciclos de minutos, no de horas. Prueba, corrige y evoluciona en tiempo real.</p>
+              </div>
+              <div class="principle-item">
+                <div class="principle-number">03</div>
+                <h3>Contexto Persistente</h3>
+                <p>Mantén al agente informado del stack, estilo y objetivos del proyecto.</p>
+              </div>
+              <div class="principle-item">
+                <div class="principle-number">04</div>
+                <h3>Revisión como Código</h3>
+                <p>Cada sugerencia de la IA es un pull request: léela, entiéndela, apruébala.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <h2>¿Para quién es este manual?</h2>
+            <p>Este manual está dirigido a desarrolladores de todos los niveles que quieran integrar agentes de IA en su flujo diario de trabajo. Cubre desde los conceptos básicos hasta patrones avanzados de prompting, arquitectura de prototipos y mejores prácticas de colaboración humano-máquina.</p>
+          </article>
+        </section>
+
+        <!-- ==================== FILOSOFÍA ==================== -->
+        <section class="section" id="section-filosofia" aria-labelledby="filosofia-heading">
+          <h2 id="filosofia-heading">Filosofía de Vibe Coding</h2>
+
+          <article class="card">
+            <h3>El cambio de mentalidad</h3>
+            <p>La programación tradicional enseña a pensar en algoritmos, estructuras de datos y sintaxis. Vibe Coding enseña a pensar en <strong>resultados</strong>, <strong>restricciones</strong> y <strong>validación</strong>. El desarrollador se convierte en un <em>director técnico</em> en lugar de un <em>escritor de código</em>.</p>
+            <blockquote>
+              <p>"No escribas código que la IA pueda escribir mejor; escribe el código que la IA no puede imaginar."</p>
+            </blockquote>
+          </article>
+
+          <article class="card">
+            <h3>Colaboración persona-IA</h3>
+            <p>La relación óptima no es de reemplazo, sino de <strong>amplificación</strong>. La IA acelera la implementación mecánica; el humano aporta juicio de negocio, ética, creatividad y contexto organizacional. Un agente de IA no sabe si una funcionalidad es estratégicamente correcta, si cumple normativas o si alienará a los usuarios: eso sigue siendo responsabilidad humana.</p>
+          </article>
+
+          <article class="card">
+            <h3>Calidad sin perfeccionismo</h3>
+            <p>Vibe Coding favorece el <em>bueno y rápido</em> sobre el <em>perfecto y lento</em>. El código generado por IA es un borrador ejecutable: funciona, se puede probar y se itera. El perfeccionamiento llega en ciclos posteriores, guiados por tests, métricas y retroalimentación real.</p>
+          </article>
+        </section>
+
+        <!-- ==================== FLUJO DE TRABAJO ==================== -->
+        <section class="section" id="section-flujo" aria-labelledby="flujo-heading">
+          <h2 id="flujo-heading">Flujo de Trabajo</h2>
+
+          <article class="card">
+            <h3>El ciclo VIBE</h3>
+            <p>El flujo de trabajo se organiza en cinco fases iterativas:</p>
+            <ol class="styled-ol">
+              <li>
+                <strong>Visionar (V)</strong> — Define el objetivo en lenguaje natural. Describe el resultado deseado, el usuario final y las restricciones. Evita especificar implementaciones técnicas a menos que sean obligatorias.
+              </li>
+              <li>
+                <strong>Iterar (I)</strong> — El agente propone una solución. Tú validas si se acerca al objetivo. Si no, corrige la dirección con un prompt refinado. La clave es la velocidad: un ciclo de iteración debe durar segundos o minutos.
+              </li>
+              <li>
+                <strong>Build (B)</strong> — Cuando la solución es válida, el agente la materializa en código, tests, documentación y configuración. Tú revisas y apruebas.
+              </li>
+              <li>
+                <strong>Evaluar (E)</strong> — Ejecuta la solución, observa el comportamiento, mide métricas y recopila feedback. Esto alimenta la siguiente iteración.
+              </li>
+            </ol>
+            <p class="note">Nota: algunos autores añaden una quinta fase, <strong>Refactor (R)</strong>, para consolidar y limpiar el código una vez validado.</p>
+          </article>
+
+          <article class="card">
+            <h3>Prompting declarativo</h3>
+            <p>El prompting declarativo es la habilidad central de Vibe Coding. En lugar de decir <em>"usa un bucle for"</em>, dices <em>"necesito que cada elemento de esta lista se procese y se guarde en la base de datos"</em>. Deja que la IA elija la estructura de control.</p>
+            <div class="compare">
+              <div class="compare-box compare-bad">
+                <h4>❌ Imperativo</h4>
+                <code>Crea una función con un for loop que recorra arr y haga console.log de cada item.</code>
+              </div>
+              <div class="compare-box compare-good">
+                <h4>✅ Declarativo</h4>
+                <code>Quiero imprimir en consola todos los elementos de este array para debug.</code>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Gestión del contexto</h3>
+            <p>Los agentes de IA tienen ventanas de contexto limitadas. Una sesión de Vibe Coding eficiente:</p>
+            <ul class="styled-ul">
+              <li><strong>Inicializa</strong> con un resumen del stack, estilo y objetivos.</li>
+              <li><strong>Segmenta</strong> el trabajo en tareas pequeñas y autónomas.</li>
+              <li><strong>Resume</strong> periódicamente el estado para evitar desviaciones.</li>
+              <li><strong>Archiva</strong> decisiones importantes en un documento de contexto persistente.</li>
+            </ul>
+          </article>
+        </section>
+
+        <!-- ==================== PATRONES DE PROMPTING ==================== -->
+        <section class="section" id="section-patrones" aria-labelledby="patrones-heading">
+          <h2 id="patrones-heading">Patrones de Prompting</h2>
+
+          <article class="card">
+            <h3>Chain of Thought (CoT)</h3>
+            <p>Pide a la IA que explique su razonamiento paso a paso antes de dar la solución final. Esto mejora la calidad de respuestas complejas y permite detectar errores de lógica temprano.</p>
+            <div class="prompt-box">
+              <p>"Antes de escribir el código, explica paso a paso cómo resolverías este problema y por qué eliges cada estructura de datos."</p>
+              <button class="copy-btn" data-prompt="Antes de escribir el código, explica paso a paso cómo resolverías este problema y por qué eliges cada estructura de datos.">Copiar prompt</button>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Few-shot Prompting</h3>
+            <p>Proporciona ejemplos del formato o estilo que esperas. Es especialmente útil para tareas repetitivas o cuando necesitas consistencia con el código existente.</p>
+            <div class="prompt-box">
+              <p>"Aquí hay dos ejemplos de cómo estructuro mis componentes React. Genera el siguiente componente siguiendo exactamente el mismo patrón…"</p>
+              <button class="copy-btn" data-prompt="Aquí hay dos ejemplos de cómo estructuro mis componentes React. Genera el siguiente componente siguiendo exactamente el mismo patrón…">Copiar prompt</button>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>ReAct (Reasoning + Acting)</h3>
+            <p>Intercala razonamiento y acción. El agente piensa, actúa (ejecuta código o consulta datos), observa el resultado y vuelve a razonar. Ideal para debugging y tareas de múltiples pasos.</p>
+            <div class="prompt-box">
+              <p>"Hay un bug en esta función. Piensa en qué podría estar fallando, propón una hipótesis, escribe un test para verificarla y luego corrige el código si el test falla."</p>
+              <button class="copy-btn" data-prompt="Hay un bug en esta función. Piensa en qué podría estar fallando, propón una hipótesis, escribe un test para verificarla y luego corrige el código si el test falla.">Copiar prompt</button>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Persona y Rol</h3>
+            <p>Asigna un rol específico a la IA para elevar la calidad de respuestas especializadas. Un "arquitecto de software senior" dará mejores recomendaciones de diseño que un "asistente genérico".</p>
+            <div class="prompt-box">
+              <p>"Actúa como un arquitecto de software senior especializado en sistemas distribuidos. Revisa este diseño y señala cuellos de botella, riesgos de concurrencia y violaciones del teorema CAP."</p>
+              <button class="copy-btn" data-prompt="Actúa como un arquitecto de software senior especializado en sistemas distribuidos. Revisa este diseño y señala cuellos de botella, riesgos de concurrencia y violaciones del teorema CAP.">Copiar prompt</button>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Refactorización Asistida</h3>
+            <p>Pide refactorizaciones específicas con criterios claros. La IA puede simplificar código, extraer funciones, renombrar variables o migrar a un patrón de diseño.</p>
+            <div class="prompt-box">
+              <p>"Refactoriza este código para eliminar la duplicación, aplicar el patrón Strategy y hacer que sea testeable unitariamente. No cambies el comportamiento externo."</p>
+              <button class="copy-btn" data-prompt="Refactoriza este código para eliminar la duplicación, aplicar el patrón Strategy y hacer que sea testeable unitariamente. No cambies el comportamiento externo.">Copiar prompt</button>
+            </div>
+          </article>
+        </section>
+
+        <!-- ==================== ECOSISTEMA ==================== -->
+        <section class="section" id="section-ecosistema" aria-labelledby="ecosistema-heading">
+          <h2 id="ecosistema-heading">Ecosistema de Herramientas</h2>
+
+          <article class="card">
+            <h3>Agentes de código</h3>
+            <div class="tool-grid">
+              <div class="tool-card">
+                <h4>Claude Code</h4>
+                <p>Agente CLI de Anthropic con acceso a shell, Git y editores. Destaca en contexto largo y razonamiento complejo.</p>
+                <span class="tag">CLI</span>
+              </div>
+              <div class="tool-card">
+                <h4>Cursor</h4>
+                <p>IDE con IA integrada, autocompletado contextual y chat en línea. Basado en VS Code.</p>
+                <span class="tag">IDE</span>
+              </div>
+              <div class="tool-card">
+                <h4>Kimi Work</h4>
+                <p>Agente persistente local con memoria, sesiones, automatizaciones Blueprint y ejecución de herramientas.</p>
+                <span class="tag">Local</span>
+              </div>
+              <div class="tool-card">
+                <h4>GitHub Copilot</h4>
+                <p>Autocompletado y generación de código en tiempo real dentro de editores compatibles.</p>
+                <span class="tag">Extensión</span>
+              </div>
+              <div class="tool-card">
+                <h4>Windsurf / Codeium</h4>
+                <p>IDEs emergentes con agentes conversacionales y flujos de trabajo automatizados.</p>
+                <span class="tag">IDE</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Orquestación y contexto</h3>
+            <ul class="styled-ul">
+              <li><strong>Context7 / Continue.dev</strong> — Extensión para mantener contexto de proyecto en VS Code.</li>
+              <li><strong>Repomix</strong> — Empaqueta un repositorio completo para alimentar la ventana de contexto de la IA.</li>
+              <li><strong>Aider</strong> — Agent CLI con soporte para múltiples modelos y edición parcial de archivos.</li>
+              <li><strong>MCP (Model Context Protocol)</strong> — Protocolo estandarizado para conectar IA con herramientas externas, bases de datos y APIs.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Infraestructura para prototipos</h3>
+            <ul class="styled-ul">
+              <li><strong>Vercel / Netlify</strong> — Deploy instantáneo de frontends.</li>
+              <li><strong>Replit / StackBlitz</strong> — Entornos de desarrollo en la nube con IA integrada.</li>
+              <li><strong>Docker + Docker Compose</strong> — Levantar stacks completos localmente en segundos.</li>
+              <li><strong>ngrok / Cloudflare Tunnel</strong> — Exponer servidores locales para pruebas rápidas.</li>
+            </ul>
+          </article>
+        </section>
+
+        <!-- ==================== ARQUITECTURA RÁPIDA ==================== -->
+        <section class="section" id="section-arquitectura" aria-labelledby="arquitectura-heading">
+          <h2 id="arquitectura-heading">Arquitectura para Prototipado Rápido</h2>
+
+          <article class="card">
+            <h3>El stack mínimo viable</h3>
+            <p>En Vibe Coding, el objetivo es validar hipótesis antes de invertir en infraestructura. Un stack MVP típico:</p>
+            <div class="code-block">
+<pre><code>Frontend    →  Vite + React/Vue/Svelte + Vanilla CSS
+Backend     →  Express / FastAPI / Hono
+Base datos  →  SQLite / PostgreSQL (Docker)
+Auth        →  JWT simple / Clerk / Auth0
+Deploy      →  Vercel (frontend) + Railway/Render (backend)</code></pre>
+            </div>
+            <p>Cada capa debe ser reemplazable sin reescribir la lógica de negocio. Usa abstracciones delgadas y evita optimizaciones prematuras.</p>
+          </article>
+
+          <article class="card">
+            <h3>Modularidad asistida</h3>
+            <p>Diseña tu aplicación en módulos independientes que puedan ser desarrollados y testeados por separado. La IA es más efectiva cuando trabaja en archivos pequeños y con interfaces claras.</p>
+            <ul class="styled-ul">
+              <li>Un archivo, una responsabilidad.</li>
+              <li>Interfaces explícitas entre módulos.</li>
+              <li>Tests unitarios por módulo (la IA puede generarlos).</li>
+              <li>Datos de prueba inyectables (fixtures, seeds).</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>De prototipo a producción</h3>
+            <p>El código generado en modo Vibe Coding es un <em>borrador ejecutable</em>. Antes de pasar a producción:</p>
+            <ol class="styled-ol">
+              <li><strong>Audita</strong> seguridad: validación de inputs, sanitización, secretos.</li>
+              <li><strong>Escribe</strong> tests de integración y E2E.</li>
+              <li><strong>Revisa</strong> dependencias: elimina paquetes no usados, actualiza vulnerables.</li>
+              <li><strong>Documenta</strong> decisiones arquitectónicas y contratos de API.</li>
+              <li><strong>Monitorea</strong>: logging, métricas y alertas desde el día uno.</li>
+            </ol>
+          </article>
+        </section>
+
+        <!-- ==================== MEJORES PRÁCTICAS ==================== -->
+        <section class="section" id="section-practicas" aria-labelledby="practicas-heading">
+          <h2 id="practicas-heading">Mejores Prácticas</h2>
+
+          <article class="card">
+            <h3>Comunicación efectiva con agentes</h3>
+            <ul class="styled-ul">
+              <li>Sé específico en los requisitos, pero flexible en la implementación.</li>
+              <li>Proporciona ejemplos concretos del comportamiento esperado.</li>
+              <li>Usa listas y estructura cuando el contexto es complejo.</li>
+              <li>Corrige temprano: un malentendido en la iteración 1 cuesta 10 veces menos que en la iteración 10.</li>
+              <li>Pide explicaciones cuando no entiendas el código generado.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Control de versiones en sesiones Vibe</h3>
+            <p>Cada iteración exitosa debe ser un commit. Esto permite:</p>
+            <ul class="styled-ul">
+              <li>Revertir cuando la IA introduce un cambio no deseado.</li>
+              <li>Mantener un historial limpio y revisable.</li>
+              <li>Comparar versiones con <code>git diff</code> para entender qué cambió.</li>
+            </ul>
+            <div class="code-block">
+<pre><code># Flujo recomendado
+git add .
+git commit -m "iter: auth con JWT + middleware"
+# Pedir siguiente feature a la IA</code></pre>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Seguridad y privacidad</h3>
+            <ul class="styled-ul">
+              <li><strong>Nunca</strong> pegues secretos, tokens o contraseñas en el chat de una IA cloud.</li>
+              <li>Usa variables de entorno (<code>.env</code>) y un <code>.env.example</code> como referencia.</li>
+              <li>Revisa el código generado en busca de vulnerabilidades comunes: inyección SQL, XSS, CSRF.</li>
+              <li>Prefiere agentes locales o self-hosted para código sensible.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Métricas de sesión</h3>
+            <p>Mide tu productividad en Vibe Coding con métricas significativas:</p>
+            <ul class="styled-ul">
+              <li><strong>Tiempo de ciclo:</strong> desde la idea hasta el código funcional.</li>
+              <li><strong>Tasa de aceptación:</strong> porcentaje de sugerencias de IA que aceptas sin modificar.</li>
+              <li><strong>Defectos por iteración:</strong> cuántos bugs introduce cada cambio.</li>
+              <li><strong>Cobertura de tests:</strong> mide si la IA está generando tests junto al código.</li>
+            </ul>
+          </article>
+        </section>
+
+        <!-- ==================== ANTI-PATRONES ==================== -->
+        <section class="section" id="section-antipatrones" aria-labelledby="antipatrones-heading">
+          <h2 id="antipatrones-heading">Anti-patrones</h2>
+
+          <article class="card card-warning">
+            <h3>🔥 Prompt Vague</h3>
+            <p>Enviar prompts como <em>"haz que funcione"</em> o <em>"arregla esto"</em> sin contexto. Resultado: soluciones irrelevantes o parches frágiles.</p>
+            <p class="fix"><strong>Corrección:</strong> Incluye el comportamiento esperado, el comportamiento actual y el entorno (stack, versión, logs).</p>
+          </article>
+
+          <article class="card card-warning">
+            <h3>🔥 Aceptación Ciega</h3>
+            <p>Aprobar todo el código generado sin leerlo. La IA puede introducir dependencias innecesarias, vulnerabilidades o lógica incorrecta.</p>
+            <p class="fix"><strong>Corrección:</strong> Lee cada diff. Pregunta por decisiones arquitectónicas. Exige tests.</p>
+          </article>
+
+          <article class="card card-warning">
+            <h3>🔥 Contexto Zombie</h3>
+            <p>Seguir una sesión de horas sin resumir el estado. La ventana de contexto se llena, la IA olvida decisiones tempranas y empieza a contradecirse.</p>
+            <p class="fix"><strong>Corrección:</strong> Cada 5-7 iteraciones, genera un resumen de contexto o reinicia la sesión con un prompt de inicialización enriquecido.</p>
+          </article>
+
+          <article class="card card-warning">
+            <h3>🔥 Feature Creep Asistido</h3>
+            <p>Usar la velocidad de la IA como excusa para añadir funcionalidades sin validar necesidad. Un prototipo crece hasta convertirse en un monolito indeseable.</p>
+            <p class="fix"><strong>Corrección:</strong> Define un MVP antes de empezar. Valida cada feature con un criterio de aceptación claro.</p>
+          </article>
+
+          <article class="card card-warning">
+            <h3>🔥 Deuda Técnica Invisible</h3>
+            <p>Acumular código generado sin refactorizar. Lo que funciona hoy puede ser imposible de mantener en tres meses.</p>
+            <p class="fix"><strong>Corrección:</strong> Reserva el 20% de cada sesión para refactorización, renombrado y limpieza.</p>
+          </article>
+        </section>
+
+        <!-- ==================== PROMPTS DE EJEMPLO ==================== -->
+        <section class="section" id="section-prompts" aria-labelledby="prompts-heading">
+          <h2 id="prompts-heading">Prompts de Ejemplo</h2>
+          <p class="section-intro">Copia estos prompts y adáptalos a tu stack y necesidades.</p>
+
+          <article class="card">
+            <h3>Inicialización de proyecto</h3>
+            <div class="prompt-box">
+              <p>Quiero crear una SPA de gestión de tareas con autenticación. Stack: React 18 + Vite + Tailwind CSS + Express + JWT + SQLite. Diseño moderno con modo oscuro. Empieza por la estructura de carpetas y el esqueleto del backend.</p>
+              <button class="copy-btn" data-prompt="Quiero crear una SPA de gestión de tareas con autenticación. Stack: React 18 + Vite + Tailwind CSS + Express + JWT + SQLite. Diseño moderno con modo oscuro. Empieza por la estructura de carpetas y el esqueleto del backend.">Copiar prompt</button>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Feature nueva</h3>
+            <div class="prompt-box">
+              <p>Agrega un endpoint PATCH /tasks/:id/priority que actualice la prioridad de una tarea. Valida que la prioridad sea 'low', 'medium' o 'high'. Devuelve la tarea actualizada. Escribe el test de integración también.</p>
+              <button class="copy-btn" data-prompt="Agrega un endpoint PATCH /tasks/:id/priority que actualice la prioridad de una tarea. Valida que la prioridad sea 'low', 'medium' o 'high'. Devuelve la tarea actualizada. Escribe el test de integración también.">Copiar prompt</button>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Debugging</h3>
+            <div class="prompt-box">
+              <p>Este endpoint de login devuelve 500 en producción pero funciona en local. Aquí están los logs del servidor y el código del controlador. Diagnostica el problema paso a paso y propón la solución con un test que lo reproduzca.</p>
+              <button class="copy-btn" data-prompt="Este endpoint de login devuelve 500 en producción pero funciona en local. Aquí están los logs del servidor y el código del controlador. Diagnostica el problema paso a paso y propón la solución con un test que lo reproduzca.">Copiar prompt</button>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Refactorización</h3>
+            <div class="prompt-box">
+              <p>Refactoriza este componente de 400 líneas en subcomponentes más pequeños. Aplica el patrón de composición de React. No uses librerías externas. Asegúrate de que todos los tests existentes sigan pasando.</p>
+              <button class="copy-btn" data-prompt="Refactoriza este componente de 400 líneas en subcomponentes más pequeños. Aplica el patrón de composición de React. No uses librerías externas. Asegúrate de que todos los tests existentes sigan pasando.">Copiar prompt</button>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Documentación</h3>
+            <div class="prompt-box">
+              <p>Genera un README.md profesional para este proyecto. Incluye: descripción, stack, instrucciones de instalación, variables de entorno, estructura de carpetas, cómo correr tests y cómo hacer deploy en Vercel.</p>
+              <button class="copy-btn" data-prompt="Genera un README.md profesional para este proyecto. Incluye: descripción, stack, instrucciones de instalación, variables de entorno, estructura de carpetas, cómo correr tests y cómo hacer deploy en Vercel.">Copiar prompt</button>
+            </div>
+          </article>
+        </section>
+
+        <!-- ==================== GLOSARIO ==================== -->
+        <section class="section" id="section-glosario" aria-labelledby="glosario-heading">
+          <h2 id="glosario-heading">Glosario</h2>
+
+          <article class="card">
+            <dl class="glossary">
+              <dt>Agente de IA</dt>
+              <dd>Sistema de inteligencia artificial capaz de realizar tareas autónomas, como generar código, ejecutar comandos o interactuar con APIs.</dd>
+
+              <dt>Chain of Thought (CoT)</dt>
+              <dd>Técnica de prompting que solicita a la IA que exprese su razonamiento paso a paso antes de la respuesta final.</dd>
+
+              <dt>Context Window</dt>
+              <dd>Cantidad máxima de tokens (texto) que un modelo de IA puede procesar en una sola interacción.</dd>
+
+              <dt>Few-shot Prompting</dt>
+              <dd>Técnica que proporciona ejemplos concretos dentro del prompt para guiar el formato o estilo de la respuesta.</dd>
+
+              <dt>MCP (Model Context Protocol)</dt>
+              <dd>Protocolo estándar para conectar modelos de lenguaje con herramientas, datos y servicios externos.</dd>
+
+              <dt>Prompt Declarativo</dt>
+              <dd>Estilo de instrucción que describe el resultado deseado sin especificar los pasos exactos para alcanzarlo.</dd>
+
+              <dt>ReAct</dt>
+              <dd>Patrón de prompting que intercala razonamiento (Reasoning) y acción (Acting) para resolver problemas complejos.</dd>
+
+              <dt>Repomix</dt>
+              <dd>Herramienta que empaqueta un repositorio completo en un solo archivo para alimentar la ventana de contexto de un modelo de IA.</dd>
+
+              <dt>Vibe Coding</dt>
+              <dd>Metodología de desarrollo donde el programador delega la implementación mecánica a un agente de IA, enfocándose en la dirección y validación.</dd>
+
+              <dt>Ventana de Contexto</dt>
+              <dd>Ver <em>Context Window</em>.</dd>
+            </dl>
+          </article>
+        </section>
+      </div>
+
+      <footer class="page-footer">
+        <p>Vibe Coding Manual · Generado con ♥ y asistencia de IA · 2026</p>
+      </footer>
+    </main>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true">
+    <span id="toast-message">Copiado al portapapeles</span>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
